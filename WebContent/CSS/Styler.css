@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+
+h5.transparent{
+	opacity: .7;
+	text-align: center;
+}
+img.headerImage{
+	width:90%;
+	margin:0 auto 0 auto;
+}
+#wrapper{
+	width:99%
+	margin:0 auto 0 auto;
+}
