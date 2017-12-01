@@ -42,6 +42,7 @@ public class UserController {
 					modelAndView.setViewName("SignUpForm");;
 					modelAndView.addObject("user",new User());
 					error.setErrMsg("Fields should not be left blank.");
+					
 				}
 			}
 			else
@@ -119,6 +120,9 @@ public class UserController {
 		modelAndView.addObject("events",events.getAllEvents()); // Pass the events class that holds the list of classes.
 		return modelAndView;
 	}
+	
+	//Add events
+	//Edit events
 	
 	
 	@Bean

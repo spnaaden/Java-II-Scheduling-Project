@@ -12,34 +12,26 @@
 </head>
 <body>
 <div id="wrapper">
-<img class="headerImage" src="Images/headerlogo-full.jpg" alt="HeaderImage" />
+<img class="headerImage" src="../Images/headerlogo-full.jpg" alt="HeaderImage" />
 <table width="90%" border="1">
 	<tr>
 		<th>Date</th>
 		<th>Start Time</th>
 		<th>End Time</th>
 		<th>Event</th>
-		<th>Description</th>
 		<th>Address</th>
 		<th>Edit/Delete</th>
 	</tr>
-
-<c:forEach items="${events}" var="event">
-	<tr id = ${event.getEvent_ID() }> <!-- We can tell which event id we are looking at -->
-		<td>${event.getEventDate().toString() }</td>
-		<td>${event.getStartTime().toString()}</td>
-		<td>${event.getEndTime().toString() }</td>
-		<td>${event.getEventDescription() }</td>
-		<td>${event.getEventName() }</td>
-		<td>${event.getEventAddress() }</td>
+	<tr>
+		<td>11/29/2017</td>
+		<td>10:00 AM</td>
+		<td>11:00 PM</td>
+		<td>Living Life</td>
+		<td>8347 N Blvd, Iowa City, IA</td>
 		<td><input type="button" name="edit" value="Edit"> <input type="button" name="delete" value="Delete"></td>
 	</tr>
-</c:forEach>
 </table> 
 <h5 class="transparent">Property of SuperScheduler Studios©</h5>
 </div>
 </body>
-<script>
-var counter = 0;
-</script>
 </html>

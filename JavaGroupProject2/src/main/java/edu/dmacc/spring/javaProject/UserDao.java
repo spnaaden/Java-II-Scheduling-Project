@@ -15,8 +15,8 @@ public class UserDao{
 		em.persist(userToAdd);
 		em.getTransaction().commit();
 		em.close();
-		emfactory.close();
 		System.out.println("InsertUser");
+		
 	}
 	
 	public User selectUser(User user) {
@@ -42,6 +42,7 @@ public class UserDao{
 			thisUser = null;
 		}
 		
+		em.close();
 		return thisUser;
 	}
 }

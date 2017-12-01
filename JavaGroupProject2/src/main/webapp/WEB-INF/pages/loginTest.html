@@ -1,10 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri = "http://www.springframework.org/tags/form" prefix="mvc" %>
-     <%@ page isELIgnored="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+﻿<!DOCTYPE html>
 <html>
-
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
@@ -80,23 +75,23 @@
     <body>
 
         <h1>Scheduling App Login Page</h1>
-        <mvc:form modelAttribute="user" action="login.mvc" id="loginForm">
+        <form modelAttribute="user" action="login.mvc" id="loginForm">
             <div class="inputsDiv">
             <div id="usernameDiv" class="inputField">
-                <span style="padding:8px;">Username:</span><br>
-                <mvc:input path="userName" id="userNametBox" />
+                <span>Username:</span><br>
+                <input path="userName" id="userNametBox" />
             </div>
 
             <div id="passwordDiv" class="inputField">
-                <span style="padding:8px;">Password:</span> <br>
-                <mvc:input path="password" id="passwordtBox" />
+                <span>Password:</span> <br>
+                <input path="password" id="passwordtBox" />
             </div>
                 </div>
 
             <input id="loginButton" type="submit" value="Login">
             <span style="color:red;">${err.errMsg}</span>
             <p><em>Don't have an account? <a href="signUp.mvc">Sign up here!</a></em></p>
-        </mvc:form>
+        </form>
 
 
     </body>

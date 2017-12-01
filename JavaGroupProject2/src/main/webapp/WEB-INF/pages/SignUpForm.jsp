@@ -48,11 +48,10 @@
 
         }
 
-        #passMissMatchText{
+        #errField{
             width:100%;
             text-align:center;
             color:red;
-            visibility:hidden;
             
         }
 
@@ -60,6 +59,8 @@
             display:block;
             margin: 0 auto;
         }
+        
+        
         
     </style>
 
@@ -117,13 +118,13 @@
         <input id="subButton" type="submit" value="Submit"/>
         </p>
 
-        <p id="passMissMatchText">Passwords Do Not Match</p>
+        <p id="errField">${error.getErrMsg() }</p>
     </div>
 </mvc:form>
     <script>
         var passCheck1Elem = document.getElementById("passCheck1"),
             passCheck2Elem = document.getElementById("passCheck2"),
-            errorElem = document.getElementById("passMissMatchText");
+            errorElem = document.getElementById("errField");
 
         var validMatch = false; // A boolean only to be used to not attempt a database event if the password creation boxes do not match;
 
@@ -134,7 +135,7 @@
                 p2 = passCheck2Elem.value;
 
             if (p1 != p2) {
-                errorElem.style.visibility = "visible";
+                errorElem.innerHTML = "Passwords do not match.";
                 validMatch = false;
                 document.getElementById("subButton").type = "button";
                 
@@ -142,7 +143,7 @@
             else
             {
                 validMatch = true;
-                errorElem.style.visibility = "hidden"; // Need to edit this so that it will still contain other errors after database check.
+     			errorElem.innerHTML = "${error.getErrMsg()}";
                 document.getElementById("subButton").type = "submit";
             }
             

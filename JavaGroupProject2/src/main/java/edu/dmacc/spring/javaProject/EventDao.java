@@ -14,6 +14,15 @@ import edu.dmacc.spring.javaProject.User;
 public class EventDao {
 	EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("JavaGroupProject2");
 	
+	public void insertEvent(Event eventToAdd){
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(eventToAdd);
+		em.getTransaction().commit();
+		
+		//emfactory.close();	
+	}
+	
 	public Events selectEvents(int userId) {
 		EntityManager em = emfactory.createEntityManager();
 		
@@ -27,6 +36,7 @@ public class EventDao {
 		events.setAllEvents(typeQ.getResultList()); // Store the list inside the events object.
 		
 		return events; // pass back the object containing the list of events.
+		
 	}
 	
 	// Insert event (Adding and deleting events should be handled on page leaving... We should simulate them being gone using javascript on the events page.)
