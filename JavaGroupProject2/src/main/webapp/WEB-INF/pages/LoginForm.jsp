@@ -9,11 +9,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
         <title>Scheduling App Login Page</title>
-
+<link href="Styles/Styler.css" rel="stylesheet" type="text/css"/>
         <style>
-            body {
-                background-color: AliceBlue;
-            }
+            
 
             h1 {
                 margin-top: 40px;
@@ -96,6 +94,7 @@
             <input id="loginButton" type="submit" value="Login">
             <span style="color:red;">${err.errMsg}</span>
             <p><em>Don't have an account? <a href="signUp.mvc">Sign up here!</a></em></p>
+            
         </mvc:form>
 
 

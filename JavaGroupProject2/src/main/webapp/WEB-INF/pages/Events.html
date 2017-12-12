@@ -16,28 +16,17 @@
         }
 
         #addForm.offScreen{
-        z-index:2;
             width:100%;
-            height: 800px;
-            top:10%;
             position:fixed;
             transition:all 1s;
             right:-100%;
         }
         #addForm form{
-            width: 50%;
-            overflow:auto;
+            width: 70%;
             margin: 0 auto;
             background-color:white;
             border:thin solid black;
         }
-        
-        #addForm form p{
-        float:right;
-        padding:8px;
-        padding-right:20%;
-        }
-
 
         .onScreen{
             right: 0% !important;
@@ -79,58 +68,20 @@
                 </tr>
             </c:forEach>
         </table>
-        <center><input type="button" onclick="addButtonClicked()" value="Add an Event" style="width:200px; margin: 0 auto;"/></center>
+        <input type="button" onclick="addButtonClicked()" value="Add an Event" style="width:200px; margin: 0 auto;"/>
 
         <div id="addForm" class="offScreen">
-        
-            <mvc:form modelAttribute="event" action="addEvent.mvc" id="newform">
-            <input type="button" style="float:right background-color:red;" value="X" onclick="cancelAddEvent()">
-        	<center>New Event</center>
-                        <mvc:input type="hidden" path="pass" value="${newEvent.getPass()}" />
-                        <mvc:input type="hidden" path="user" value="${newEvent.getUser()}" />
-                        <mvc:input type="hidden" path="user_ID" value="${newEvent.getUser_ID() }" />
-                        <mvc:input type="hidden" path="saved" value="" />
-                        <p>
-                        <label>Date:</label>
-                        <mvc:input placeholder="dd/mm/yyyy" path="eventDate" value="${ evnt.getEventDate().toString()}" /></p>
-                        
-                        <p>
-                        <label>Start Time:</label>
-                        <mvc:input path="eventStartTime" value="${ evnt.getEventStartTime().toString()}"/></p>
-                        <p>
-                        <label>End Time:</label>
-                        <mvc:input path="eventEndTime" value="${ evnt.getEventEndTime().toString()}"/></p>
-           
-                        <p>
-                        <label>Description:</label>
-                        <mvc:input path="eventDescription" value="${ evnt.getEventDescription()}"  /></p>
-                        
-                        <p>
-                        <label>Event Name:</label>
-                        <mvc:input path="eventName" value="${ evnt.getEventName()}"  />
-                        
-                        <p>
-                        <label>Address:</label>
-                        <mvc:input path="eventAddress" value="${ evnt.getEventAddress()}"/>
-                        
-                        <p style="clear:both; margin: 0 auto;">
-                        
-                        <input id="${ evnt.getEvent_ID()}save"  type="submit" value="Save">
-                        </p>
-                       
-                    </mvc:form>
+            <form>
+                Hello Hello
+            </form>
         </div>
         
         <h5 class="transparent">Property of SuperScheduler Studios©</h5>
     </div>
     <script>
-    var addForm = document.getElementById("addForm");
         function addButtonClicked() {
-           addForm.classList.add("onScreen");
-        }
-        
-        function cancelAddEvent(){
-        	addForm.classList.remove("onScreen");
+            var elem = document.getElementById("addForm");
+            elem.classList.add("onScreen");
         }
 
 var errMsg = "${error.getErrMsg()}";
@@ -143,7 +94,8 @@ if (errMsg != null || errMsg != ""){
 function delButtClick(elem){
 	var formID = elem.id.slice(0,-3) + "form"; // Cut out the del part.
 	var form = document.getElementById(formID); // Get the form.
-	
+	alert(formID);
+	alert(form.id);
 	form.action = "delete.mvc"; // Change the action to delete.
 	form.submit();
 }

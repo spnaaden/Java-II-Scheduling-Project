@@ -9,11 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
     <title>Account Creation</title>
-
+<link href="Styles/Styler.css" rel="stylesheet" type="text/css"/>
     <style>
-        body{
-            background-color:aliceblue;
-        }
 
         .container{
             width:40%;

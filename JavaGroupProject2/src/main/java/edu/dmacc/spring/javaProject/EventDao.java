@@ -39,6 +39,40 @@ public class EventDao {
 		
 	}
 	
+	public void delete(int eventId) {
+		EntityManager em = emfactory.createEntityManager();
+		System.out.println("Inside delete event");
+		System.out.println("event id: " + eventId);
+		
+		Event event = em.find(Event.class, eventId);
+		 
+		  em.getTransaction().begin();
+		  em.remove(event);
+		  em.getTransaction().commit();
+		  em.close();
+	}
+	
+	public void updateEvents(Event event) {
+		EntityManager em = emfactory.createEntityManager();
+		System.out.println("Inside Update Event");
+		System.out.println("Event Stuff: " + event.getEventAddress() + ", Event ID: " + event.getEvent_ID());
+		
+		em.getTransaction().begin();
+		Event eventToUpdate = em.find(Event.class,event.getEvent_ID());
+		eventToUpdate.setUser_ID(event.getUser_ID());
+		eventToUpdate.setEventAddress(event.getEventAddress());
+		eventToUpdate.setEventDate(event.getEventDate());
+		eventToUpdate.setEventDescription(event.getEventDescription());
+		eventToUpdate.setEventEndTime(event.getEventEndTime());
+		eventToUpdate.setEventName(event.getEventName());
+		eventToUpdate.setEventStartTime(event.getEventStartTime());
+		eventToUpdate.setUser(event.getUser());
+		eventToUpdate.setPass(event.getPass());
+		eventToUpdate.setSaved(event.getSaved());
+		em.getTransaction().commit();
+		em.close();
+	}
+	
 	// Insert event (Adding and deleting events should be handled on page leaving... We should simulate them being gone using javascript on the events page.)
 	// Delete event
 }

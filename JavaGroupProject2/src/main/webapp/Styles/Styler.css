@@ -1,14 +1,22 @@
 @charset "ISO-8859-1";
 
+body {
+	min-height:100vh;
+    background-color: AliceBlue;
+}
+
 h5.transparent{
 	opacity: .7;
 	text-align: center;
 }
 img.headerImage{
 	width:90%;
-	margin:0 auto 0 auto;
+	margin:0 auto;
+	display:block;
 }
 #wrapper{
 	width:99%
-	margin:0 auto 0 auto;
+	margin:0 auto;
 }
+
+
