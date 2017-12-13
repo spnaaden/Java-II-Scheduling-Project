@@ -3,6 +3,7 @@ package edu.dmacc.spring.javaProject;
 
 
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 @Entity
 @Table(name="events")
@@ -122,8 +125,6 @@ public class Event {
 			valid = false;
 		}
 		
-		//if (eventDate.matches(regex))
-		
 		if (eventStartTime.equals("") || eventStartTime.equals(null)) {
 			eventStartTime = "Please fill!";
 			valid = false;
@@ -138,7 +139,11 @@ public class Event {
 			valid = false;
 		}
 		
+		
+		
 		return valid; 
+		
+		
 	}
 
 	

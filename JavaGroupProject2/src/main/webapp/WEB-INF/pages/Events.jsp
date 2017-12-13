@@ -25,7 +25,7 @@
             right:-100%;
         }
         #addForm form{
-            width: 50%;
+            width: 30%;
             overflow:auto;
             margin: 0 auto;
             background-color:white;
@@ -68,11 +68,11 @@
                         <mvc:input type="hidden" path="user_ID" value="${evnt.getUser_ID() }" />
                         <mvc:input type="hidden" path="saved" value="${evnt.getSaved() }" />
                         <td><mvc:input placeholder="dd/mm/yyyy" path="eventDate" value="${ evnt.getEventDate().toString()}" onchange="showSave(this)" /></td>
-                        <td><mvc:input path="eventStartTime" value="${ evnt.getEventStartTime().toString()}" onchange="showSave(this)" /></td>
-                        <td><mvc:input path="eventEndTime" value="${ evnt.getEventEndTime().toString()}" onchange="showSave(this)" /></td>
-                        <td><mvc:input path="eventDescription" value="${ evnt.getEventDescription()}" onchange="showSave(this)" /></td>
-                        <td><mvc:input path="eventName" value="${ evnt.getEventName()}" onchange="showSave(this)" /></td>
-                        <td><mvc:input path="eventAddress" value="${ evnt.getEventAddress()}" onchange="showSave(this)" /></td>
+                        <td><mvc:input placeholder="xx:xxAM/PM" path="eventStartTime" value="${ evnt.getEventStartTime().toString()}" onchange="showSave(this)" /></td>
+                        <td><mvc:input placeholder="xx:xxAM/PM" path="eventEndTime" value="${ evnt.getEventEndTime().toString()}" onchange="showSave(this)" /></td>
+                        <td><mvc:input placeholder="Description" path="eventDescription" value="${ evnt.getEventDescription()}" onchange="showSave(this)" /></td>
+                        <td><mvc:input placeholder="Event Name" path="eventName" value="${ evnt.getEventName()}" onchange="showSave(this)" /></td>
+                        <td><mvc:input placeholder="Event Address" path="eventAddress" value="${ evnt.getEventAddress()}" onchange="showSave(this)" /></td>
                         <td><input id="${ evnt.getEvent_ID()}save" style="display:none" type="submit" value="Save"></td>
                         <td><input id="${ evnt.getEvent_ID() }del" value="X" style="border: thin solid black;" type="button" onclick="delButtClick(this)" /></td>
                     </mvc:form>
@@ -84,7 +84,7 @@
         <div id="addForm" class="offScreen">
         
             <mvc:form modelAttribute="event" action="addEvent.mvc" id="newform">
-            <input type="button" style="float:right background-color:red;" value="X" onclick="cancelAddEvent()">
+            <input type="button" style="float:right; background-color:red;" value="X" onclick="cancelAddEvent()">
         	<center>New Event</center>
                         <mvc:input type="hidden" path="pass" value="${newEvent.getPass()}" />
                         <mvc:input type="hidden" path="user" value="${newEvent.getUser()}" />
@@ -96,22 +96,22 @@
                         
                         <p>
                         <label>Start Time:</label>
-                        <mvc:input path="eventStartTime" value="${ evnt.getEventStartTime().toString()}"/></p>
+                        <mvc:input placeholder="xx:xxAM/PM" path="eventStartTime" value="${ evnt.getEventStartTime().toString()}"/></p>
                         <p>
                         <label>End Time:</label>
-                        <mvc:input path="eventEndTime" value="${ evnt.getEventEndTime().toString()}"/></p>
+                        <mvc:input placeholder="xx:xxAM/PM" path="eventEndTime" value="${ evnt.getEventEndTime().toString()}"/></p>
            
                         <p>
                         <label>Description:</label>
-                        <mvc:input path="eventDescription" value="${ evnt.getEventDescription()}"  /></p>
+                        <mvc:input placeholder="Description" path="eventDescription" value="${ evnt.getEventDescription()}"  /></p>
                         
                         <p>
                         <label>Event Name:</label>
-                        <mvc:input path="eventName" value="${ evnt.getEventName()}"  />
+                        <mvc:input placeholder="Name of Event" path="eventName" value="${ evnt.getEventName()}"  />
                         
                         <p>
                         <label>Address:</label>
-                        <mvc:input path="eventAddress" value="${ evnt.getEventAddress()}"/>
+                        <mvc:input placeholder="Event Address" path="eventAddress" value="${ evnt.getEventAddress()}"/>
                         
                         <p style="clear:both; margin: 0 auto;">
                         

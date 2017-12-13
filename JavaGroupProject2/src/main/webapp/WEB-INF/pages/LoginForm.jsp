@@ -92,7 +92,7 @@
                 </div>
 
             <input id="loginButton" type="submit" value="Login">
-            <span style="color:red;">${err.errMsg}</span>
+            <span style="color:red; padding:8px;"><center>${err.errMsg}</center></span>
             <p><em>Don't have an account? <a href="signUp.mvc">Sign up here!</a></em></p>
             
         </mvc:form>

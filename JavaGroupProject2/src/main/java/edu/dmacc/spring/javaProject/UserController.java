@@ -42,6 +42,7 @@ public class UserController {
 				newEvent.setUser(user.getUserName());
 				newEvent.setUser_ID(user.getUser_ID());
 				modelAndView.addObject("newEvent",newEvent);
+				modelAndView.addObject("event",new Event());
 				}
 				else { // If there are blank fields
 					System.out.println("Some fields are blank"); // log error.
